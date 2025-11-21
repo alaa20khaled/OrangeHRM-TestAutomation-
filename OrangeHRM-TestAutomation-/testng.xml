@@ -1,9 +1,25 @@
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
 <suite name="OrangeHRM Suite">
+    <listeners>
+        <listener class-name="listeners.AllureListener"/>
+    </listeners>
+
     <test name="Login Tests">
         <classes>
-            <class name="Login.LoginTests"></class>
+            <class name="Login.LoginTests">
+                <methods>
+                    <include name="TestValidLogin">
+                    </include>
+                    <include name="TestLoginWithInValidPassword">
+                    </include>
+                    <include name="TestLoginWithInValidUserName">
+                    </include>
+
+                </methods>
+            </class>
 
         </classes>
+
+
     </test>
 </suite>
